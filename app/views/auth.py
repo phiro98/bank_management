@@ -10,6 +10,8 @@ auth = Blueprint('auth', __name__)
 
 @auth.route('/register', methods=['POST'])
 def register():
+    if not request.is_json:
+        return makeResponse("","User Credential Key missing", 403)
     username = request.json.get('username')
     password = request.json.get('password')
     confirm_password = request.json.get('confirm_password')
@@ -33,10 +35,12 @@ def register():
 
 @auth.route('/login', methods=['POST'])
 def login():
+    if not request.is_json:
+        return makeResponse("","User Credential Key missing", 403)
     username = request.json.get('username')
     password = request.json.get('password')
 
-    if not (username and password):
+    if not (username and password) or not request.data:
         return makeResponse("","User Credential Key missing", 403)    
     try:
         user = find_by_username(username)
