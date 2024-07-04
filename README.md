@@ -103,7 +103,7 @@ architecture:
 ## API Endpoints
 
 1.  **User Authentication**:
-    -   *POST /auth/register*: User registration with username & password.
+    -   *POST /auth/register*: User registration with username and password.
     -   *POST /auth/login*: User login to obtain JWT token.
 
 2.  **Customer Operations**:
