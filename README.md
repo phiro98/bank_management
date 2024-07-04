@@ -90,7 +90,7 @@ architecture:
 5.  **Run the Application**:
 
     ```bash
-    *flask run*
+    flask run
 
 ## Usage
 
@@ -103,15 +103,15 @@ architecture:
 ## API Endpoints
 
 1.  **User Authentication**:
-
+    -   *POST /auth/register*: User registration with username & password.
     -   *POST /auth/login*: User login to obtain JWT token.
 
 2.  **Customer Operations**:
 
-    -   *GET /main/balance*: Check account balance.
-    -   *POST /main/deposit*: Deposit funds into account.
-    -   *POST /main/withdraw*: Withdraw funds from account.
-    -   *GET /main/transactions*: View transaction history.
+    -   *GET /balance*: Check account balance.
+    -   *POST /deposit*: Deposit funds into account.
+    -   *POST /withdraw*: Withdraw funds from account.
+    -   *GET /transactions*: View transaction history.
 
 3.  **Banker Operations (Optional)**:
 
